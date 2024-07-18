@@ -22,7 +22,7 @@ const Predict = () => {
     DistanceFromHome: "",
     Education: "",
     EducationField: "",
-    EmployeeCount: "1",
+    EmployeeCount: "",
     EmployeeNumber: "",
     EnvironmentSatisfaction: "",
     Gender: "",
@@ -35,12 +35,12 @@ const Predict = () => {
     MonthlyIncome: "",
     MonthlyRate: "",
     NumCompaniesWorked: "",
-    Over18: "Y",
+    Over18: "",
     OverTime: "",
     PercentSalaryHike: "",
     PerformanceRating: "",
     RelationshipSatisfaction: "",
-    StandardHours: "80",
+    StandardHours: "",
     StockOptionLevel: "",
     TotalWorkingYears: "",
     TrainingTimesLastYear: "",
@@ -91,18 +91,18 @@ const Predict = () => {
       const result = await response.json();
       if (result.result === 0) {
         Swal.fire({
-          title: "Rendah Berkemungkinan Turnover",
+          title: "Kemungkinan Turnover Rendah",
           text: "Hasil pemeriksaan menunjukkan bahwa indikasi employee untuk melakukan turnover rendah.",
-          icon: "info",
-          iconColor: "blue",
-          color: "blue",
+          icon: "success",
+          iconColor: "green",
+          color: "green",
           showCloseButton: true,
           closeOnClickOutside: false,
           showConfirmButton: true,
         });
       } else if (result.result === 1) {
         Swal.fire({
-          title: "Tinggi Berkemungkinan Turnover",
+          title: "Kemungkinan Turnover Tinggi",
           text: "Hasil pemeriksaan menunjukkan bahwa indikasi employee untuk melakukan turnover tinggi.",
           icon: "warning",
           iconColor: "red",
@@ -122,7 +122,7 @@ const Predict = () => {
         DistanceFromHome: "",
         Education: "",
         EducationField: "",
-        EmployeeCount: "1",
+        EmployeeCount: "",
         EmployeeNumber: "",
         EnvironmentSatisfaction: "",
         Gender: "",
@@ -135,12 +135,12 @@ const Predict = () => {
         MonthlyIncome: "",
         MonthlyRate: "",
         NumCompaniesWorked: "",
-        Over18: "Y",
+        Over18: "",
         OverTime: "",
         PercentSalaryHike: "",
         PerformanceRating: "",
         RelationshipSatisfaction: "",
-        StandardHours: "80",
+        StandardHours: "",
         StockOptionLevel: "",
         TotalWorkingYears: "",
         TrainingTimesLastYear: "",
@@ -262,13 +262,23 @@ const Predict = () => {
                   <option value="Human Resources">Human Resources</option>
                 </select>
               </li>
-              <li style={{ display: "none" }}>
+              {/* <li style={{ display: "none" }}>
                 <input
                   name="EmployeeCount"
                   id="EmployeeCount" 
                   value={formData.EmployeeCount}
                   onChange={handleChange}
                   type="hidden"
+                />
+              </li> */}
+              <li className="third">
+                <input
+                  name="EmployeeCount"
+                  id="EmployeeCount"
+                  className="form-control input-predict"
+                  placeholder="EmployeeCount"
+                  value={formData.EmployeeCount}
+                  onChange={handleChange}
                 />
               </li>
               <li className="third">
@@ -408,13 +418,23 @@ const Predict = () => {
                   onChange={handleChange}
                 />
               </li>
-              <li style={{ display: "none" }}>
+              {/* <li style={{ display: "none" }}>
                 <input
                   name="Over18"
                   id="Over18"
                   value={formData.Over18}
                   onChange={handleChange}
                   type="hidden"
+                />
+              </li> */}
+              <li className="third">
+                <input
+                  name="Over18"
+                  id="Over18"
+                  className="form-control input-predict"
+                  placeholder="Over18"
+                  value={formData.Over18}
+                  onChange={handleChange}
                 />
               </li>
               <li className="third">
@@ -460,13 +480,23 @@ const Predict = () => {
                   onChange={handleChange}
                 />
               </li>
-              <li style={{ display: "none" }}>
+              {/* <li style={{ display: "none" }}>
                 <input
                   name="StandardHours"
                   id="StandardHours"
                   value={formData.StandardHours}
                   onChange={handleChange}
                   type="hidden"
+                />
+              </li> */}
+              <li className="third">
+                <input
+                  name="StandardHours"
+                  id="StandardHours"
+                  className="form-control input-predict"
+                  placeholder="StandardHours"
+                  value={formData.StandardHours}
+                  onChange={handleChange}
                 />
               </li>
               <li className="third">
